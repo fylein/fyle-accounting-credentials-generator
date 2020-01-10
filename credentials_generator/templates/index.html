@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-light" style="background-color: rgba(34,0,51,.94);" id="app-name">
+  <a class="navbar-brand" href="#" style="color:var(--white); font-size:30px">
+    <img src="https://staging.fyle.in/app/main/assets/images/icons/fyle_logo_white_new.png" width="110" height="40" class="d-inline-block align-top" alt="Fyle">
+  </a>
+</nav>
+    <br/><br/>
+<section class="bar"><div class="container"><div class="row"><div class="col col-12"><h1 align="center">Fyle Accounting Integrations</h1></div></div></div></section><br/><br/>
+    <form action="/credentials_generator/connect/" method="post">
+              {% csrf_token %}
+        <div class="container" style="width:50%">
+            <div>
+                Please choose your accounting system that would like to integrate with.
+            </div><br/>
+            <div class="form-group">
+                <label><b>Accounting system</b></label>
+                    <select class="form-control" id="sel1" name="accounting_system">
+                        <option value="qbo">QuickBooks Online</option>
+                        <option value="xero">Xero</option>
+                    </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-md" style="background-color:#f36; border-color:#f36">Authorize</button>
+        </div>
+
+    </form>
+</body>
+</html>

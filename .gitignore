@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# IDEs
+.idea
+.DS_Store
+
+# Setup File
+setup.sh
+
 # Distribution / packaging
 .Python
 build/
