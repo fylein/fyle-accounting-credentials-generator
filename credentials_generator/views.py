@@ -97,7 +97,6 @@ def get_tokens(request):
 
     if accounting_system == 'xero':
         code = request.POST.get("auth_code", "")
-        print('This is AUTHCODE', code)
         token_endpoint = 'https://identity.xero.com/connect/token'
         CLIENT_ID = settings.XERO_CLIENT_ID
         CLIENT_SECRET = settings.XERO_CLIENT_SECRET
