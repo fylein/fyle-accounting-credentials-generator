@@ -3,11 +3,10 @@ import urllib
 
 import requests
 from django.shortcuts import render, redirect
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, HttpResponse
 from django.conf import settings
 
 from django.core.mail import BadHeaderError, EmailMultiAlternatives
-from django.http import HttpResponse
 
 from credentials_generator.utilities import (
     getSecretKey,
