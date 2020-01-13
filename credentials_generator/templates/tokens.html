@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth2Tokens</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-light" style="background-color: rgba(34,0,51,.94);" id="app-name">
+  <a class="navbar-brand" href="#" style="color:var(--white); font-size:30px">
+    <img src="https://staging.fyle.in/app/main/assets/images/icons/fyle_logo_white_new.png" width="110" height="40" class="d-inline-block align-top" alt="Fyle">
+  </a>
+</nav>
+<br/><br/>
+<section class="bar">
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+                <h1 align="center">Your tokens are generated successfully</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<br/><br/>
+    <form action="/credentials_generator/send_email/" method="post">
+        {% csrf_token %}
+        <div class="container" style="width:50%">
+
+            <div class="form-group">
+                <label for="access_token">Access Token</label>
+                <input type="text" class="form-control" id="access_token" name="access_token" value="{{ access_token }}" required="true" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="refresh_token">Refresh Token </label>
+                <input type="text" class="form-control" id="refresh_token" name="refresh_token" value="{{ refresh_token }}" required="true" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="org_name">Organization Name </label>
+                <input type="text" class="form-control" id="org_name" name="org_name" value="{{ source.org_name }}" required="true" autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-md" style="background-color:#f36; border-color:#f36">Send Email</button>
+        </div>
+    </form>
+</body>
+</html>
